@@ -1,0 +1,175 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #007bff;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-bottom: 3px solid #233c80;
+
+  .header-info {
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .date-time {
+      font-size: 0.9rem;
+      color: #b0c4de;
+      margin-top: 0.3rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    .profile-menu {
+      position: relative;
+
+      .profile-button {
+        background-color: #4a5c9e;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        padding: 0.6rem 1.2rem;
+        font-size: 1rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        display: flex;
+        align-items: center;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          background-color: #6373b6;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        &:active {
+          transform: scale(0.97);
+        }
+
+        svg {
+          margin-left: 0.5rem;
+          font-size: 1.2rem;
+        }
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 3.5rem;
+        right: 0;
+        background-color: #ffffff;
+        border: 1px solid #e1e4f2;
+        border-radius: 8px;
+        width: 200px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        padding: 0.5rem 0;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        z-index: 100;
+        pointer-events: none;
+
+        &.open {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: all;
+        }
+
+        li {
+          padding: 0.75rem 1.25rem;
+          font-size: 0.95rem;
+          color: #2a3a67;
+          cursor: pointer;
+          transition: background-color 0.2s ease, color 0.2s ease;
+          display: flex;
+          align-items: center;
+
+          &:hover {
+            background-color: #f0f4fb;
+            color: #1a2e55;
+          }
+
+          &:first-child {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+          }
+
+          &:last-child {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+          }
+        }
+
+        .logout-option {
+          color: #d9534f;
+          font-weight: 500;
+
+          &:hover {
+            background-color: #fbeae9;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animations for the header and dropdown
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseButton {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// Apply animations and hover effects
+.header .profile-button {
+  animation: pulseButton 2s infinite;
+}
+
+.header .profile-menu .dropdown-menu {
+  animation: fadeInDropdown 0.3s ease;
+}
+
+// Custom scrollbar for dropdown menu
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #b0c4de;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f0f4fb;
+  }
+}

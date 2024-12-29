@@ -1,0 +1,102 @@
+.audit-logs {
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #2a3a67;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem; // Increased margin for better spacing
+    color: #1a73e8;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.5px; // Added letter spacing for better readability
+  }
+
+  .audit-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2.5rem; // Increased margin for better spacing
+    align-items: center; // Added align-items to center the controls
+
+    .search-input {
+      padding: 0.5rem;
+      border: 1px solid #d1d9e0;
+      border-radius: 8px;
+      width: 300px;
+      font-size: 1rem; // Added font size for better readability
+
+      &::placeholder {
+        color: #999;
+        font-size: 1rem; // Added font size for better readability
+      }
+    }
+
+    .sort-select {
+      padding: 0.5rem;
+      border: 1px solid #d1d9e0;
+      border-radius: 8px;
+      background-color: #ffffff;
+      font-size: 1rem; // Added font size for better readability
+    }
+  }
+
+  .log-list {
+    list-style: none;
+    padding: 0;
+
+    .log-entry {
+      background-color: #ffffff;
+      padding: 1rem;
+      border: 1px solid #d1d9e0;
+      border-radius: 8px;
+      margin-bottom: 1.5rem; // Increased margin for better separation
+      transition: background-color 0.2s ease;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Added box shadow for better depth
+
+      &:hover {
+        background-color: #f1f1f1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Increased box shadow on hover
+      }
+
+      .log-details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem; // Added margin for better spacing
+        align-items: center; // Added align-items to center the details
+
+        .log-action {
+          font-weight: bold;
+          font-size: 1.1rem; // Increased font size for better readability
+        }
+
+        .log-date {
+          color: #777;
+          font-size: 1rem; // Added font size for better readability
+        }
+
+        .log-user {
+          color: #555;
+          font-size: 1rem; // Added font size for better readability
+        }
+      }
+
+      .delete-button {
+        background-color: #e57373;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 0.25rem 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        font-size: 0.9rem; // Added font size for better readability
+
+        &:hover {
+          background-color: #ef5350;
+        }
+      }
+    }
+  }
+}

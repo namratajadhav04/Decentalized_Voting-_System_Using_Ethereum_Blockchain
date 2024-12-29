@@ -1,0 +1,42 @@
+.message-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #333;
+  border: 2px solid #007bff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-align: center;
+  width: 350px;
+  animation: fadeIn 0.5s ease;
+  transition: transform 0.2s;
+}
+
+.message-box:hover {
+  transform: translate(-50%, -50%) scale(1.05);
+}
+
+.message-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.message-content .emoji {
+  font-size: 35px;
+  margin-right: 15px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

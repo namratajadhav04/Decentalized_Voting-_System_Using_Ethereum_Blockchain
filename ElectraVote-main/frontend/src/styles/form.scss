@@ -1,0 +1,141 @@
+/* Basic styling for the form container */
+.form-container {
+  width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 5rem;
+  margin-bottom: 7rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Styling for the form title */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for individual input containers */
+.input-container {
+  margin-bottom: 20px;
+}
+
+/* Styling for labels */
+.input-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styling for text inputs, selects, and date pickers */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Styling for error messages */
+.form-error-text {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Styling for buttons */
+.submit-button, .add-button, .remove-button, .refresh-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.success-message{
+  color:#28a745;
+}
+
+.submit-button {
+  width: 100%;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.add-button {
+  background-color: #28a745;
+}
+
+.remove-button {
+  background-color: #dc3545;
+}
+
+.add-button:hover, .remove-button:hover, .submit-button:hover {
+  opacity: 0.8;
+}
+
+/* Styling for candidate list and cards */
+.candidates-container {
+  margin-top: 20px;
+}
+
+.candidate-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.candidate-info h4 {
+  margin: 0;
+}
+
+.candidate-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Styling for spinner */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #007bff;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.election-logo {
+  position:absolute;
+  right: -20rem;
+  padding-top: 10px;
+  top: 26rem;
+  width: 18rem; 
+}
+
+.election-logo img {
+  width: 100%;
+  height: auto;
+  
+}

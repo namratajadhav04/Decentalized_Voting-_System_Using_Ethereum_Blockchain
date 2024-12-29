@@ -1,0 +1,115 @@
+.statistics {
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  h2 {
+    font-size: 2.4rem;
+    color: #2d4a82;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+
+    .stat-card {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      border-radius: 12px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 12px;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+        background: linear-gradient(135deg, #bbdefb, #e3f2fd);
+
+        &:before {
+          opacity: 1;
+        }
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        color: #34495e;
+        margin-bottom: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+
+      p {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #1a73e8;
+        margin: 0.5rem 0;
+        animation: count 2s ease-in-out;
+      }
+
+      &.registered-voters,
+      &.votes-cast,
+      &.ongoing-elections,
+      &.completed-elections {
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: #1a73e8;
+          border-radius: 0 0 12px 12px;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+        &:hover:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Counter effect animation
+  @keyframes count {
+    from {
+      counter-increment: stat-value;
+    }
+    to {
+      counter-reset: stat-value;
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+    .stat-card {
+      padding: 2rem;
+    }
+  }
+}

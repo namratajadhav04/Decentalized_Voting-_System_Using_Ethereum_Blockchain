@@ -1,0 +1,69 @@
+.dashboard {
+  display: flex;
+  min-height: 00vh;
+  background-color: #f8faff;
+  color: #333;
+}
+
+.hamburger-menu {
+  width: 80px; // fixed width to prevent resizing
+  background-color: #1a73e8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  transition: width 0.3s;
+
+  &:hover {
+    width: 240px; // expand on hover for a menu reveal effect
+  }
+
+  .menu-icon {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  .menu-item {
+    font-size: 1rem;
+    color: #fff;
+    padding: 10px;
+    transition: background 0.3s;
+
+    &:hover {
+      background: #4285f4;
+      border-radius: 8px;
+    }
+  }
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  margin: 20px;
+  transition: all 0.3s;
+}
+
+.dashboard-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f1f8ff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.loading {
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 2rem;
+  color: #4285f4;
+}

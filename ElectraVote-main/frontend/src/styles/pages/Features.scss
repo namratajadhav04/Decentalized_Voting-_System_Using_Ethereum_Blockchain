@@ -1,0 +1,460 @@
+.features-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+  margin: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.title-large {
+  color: #007bff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.title-small {
+  color: #fafcff;
+  font-weight: 600;
+}
+
+.subheading {
+  color: #545556;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+.mobile-wrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  padding-top: 50px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #007bff;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.box:hover {
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.text-normal p {
+  color: #ffffff;
+}
+
+.mobile-container {
+  grid-row: 1/3;
+  grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animate-image {
+  width: 80%;
+  opacity: 1;
+  transform: translateZ(0) scale(1);
+  transition-delay: 1;
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-between; /* Distributes the cards evenly */
+  flex-wrap: wrap; /* Ensures cards wrap on smaller screens */
+  gap: 30px; /* Adds spacing between cards */
+  padding: 60px 0;
+  margin-top: 20px;
+  background-color: #f9f9f9; /* Matches your site's theme */
+}
+
+.info-card {
+  display: flex;
+  flex-direction: row;
+  width: 48%; /* Adjusted to 48% to allow more space between cards */
+  height: 30rem;
+  background-color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer, more prominent shadow */
+  overflow: hidden;
+}
+
+.info-card:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Enhance shadow on hover */
+}
+
+.text-content {
+  padding: 30px; /* Increased padding for better spacing */
+  flex: 1;
+}
+
+.text-content h3 {
+  font-size: 32px; /* Increased font size for h3 */
+  color: #007bff; /* Primary color */
+  margin-bottom: 15px;
+  font-weight: bold; /* Adds emphasis to the title */
+  position: relative; /* For positioning the underline */
+}
+
+/* Adding a curved underline to h3 */
+.text-content h3::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 5px;
+  border-radius: 50%; /* Curved underline */
+  background-color: #007bff;
+  position: absolute;
+  left: 0;
+  bottom: -10px; /* Adjust based on space needed below the text */
+}
+
+.text-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+  line-height: 2; /* Improves readability */
+}
+
+.text-content p::after {
+  content: " More info..."; /* Adds "More info" at the end of the paragraph */
+  font-style: italic;
+  color: #007bff;
+}
+
+.read-more-btn {
+  display: inline-block;
+  padding: 12px 25px; /* Increased padding for better button appearance */
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.image-content {
+  flex: 1;
+  max-height: 100%; /* Ensures the image doesn't exceed card height */
+  overflow: hidden;
+}
+
+.image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the space while maintaining aspect ratio */
+}
+
+@media (max-width: 1024px) {
+  .info-card {
+    width: 100%; /* Full width on smaller tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .info-section {
+    flex-direction: column; /* Stack cards on smaller screens */
+    align-items: center;
+  }
+
+  .info-card {
+    flex-direction: column; /* Vertical layout for the card */
+    width: 90%; /* Full width with some padding */
+    margin-bottom: 20px; /* Space between stacked cards */
+  }
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.card-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 60px;
+  margin: 30px auto;
+  background-color: #f8f9fa;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.section-title {
+  color: #007bff;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.card-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 30px;
+  padding-top: 50px;
+}
+
+.card {
+  height: 14rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: rotateY(15deg) scale(1.05); /* Increased 3D rotation on hover */
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+  font-size: 3.5rem;
+  padding-right:20rem;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-top: -100px;
+  font-weight: 800;
+  padding-left: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 10px;
+  color:#f7f5f5;
+}
+
+.card-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid #fff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card-link:hover {
+  background: #fff;
+  color: #1a73e8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 30px;
+    grid-gap: 20px;
+  }
+
+  .card {
+    padding: 25px;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.faq-section {
+  margin: 50px;
+  width:93%;
+  padding: 40px 50px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+}
+
+.faq-title {
+  font-size: 2rem;
+  color: #007bff;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #cacaca;
+  padding: 15px 0;
+  transition: all 0.4s ease-in-out;
+}
+
+.faq-item.active {
+  background-color: #e9f7fe;
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #007bff;
+}
+
+.faq-answer {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.faq-answer p {
+  margin-top: 10px;
+  color: #545556;
+  line-height: 1.6;
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  color: #007bff;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(180deg);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .features-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .mobile-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mobile-container {
+    grid-row: 1/2;
+    grid-column: 1/3;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-wrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .title-large {
+    font-size: 2rem;
+  }
+
+  .subheading {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+
+  .mobile-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-container {
+    grid-row: 2/3;
+    grid-column: 1/2;
+  }
+
+  .box {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .title-large {
+    font-size: 1.5rem;
+  }
+
+  .subheading {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
+
+  .faq-title {
+    font-size: 1.5rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,33 @@
+.back {
+  position: absolute;
+  left: 20px; 
+  top: 90px; 
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+ 
+}
+
+
+.back span {
+  margin-left: 10px; 
+}
+
+.back i {
+  font-size: 18px; 
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .back {
+    left: 10px;
+    top: 20px;
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}

@@ -1,0 +1,197 @@
+// Variables for consistent styling
+$primary-color: #0066cc;
+$primary-gradient: linear-gradient(90deg, #0066cc, #3399ff);
+$secondary-color: #003366;
+$background-color: #f9fbfd;
+$card-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+$border-radius: 12px;
+$font-color-dark: #4a4e69;
+$font-color-light: #6a7c8c;
+$font-family: "Roboto", sans-serif;
+
+// Mixins for reusable styling
+@mixin transition($properties...) {
+  transition: $properties 0.3s ease;
+}
+
+@mixin button-styles($bg-color, $hover-color) {
+  background-color: $bg-color;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 1rem 2rem;
+  @include transition(background-color, transform);
+
+  &:hover {
+    background-color: $hover-color;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Styling for Election Management
+.election-management {
+  padding: 3rem;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  box-shadow: $card-shadow;
+  font-family: $font-family;
+
+  h2 {
+    font-size: 2.8rem;
+    color: $secondary-color;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  // Form for adding new elections
+  .new-election-form {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    input {
+      padding: 1.2rem 1.5rem;
+      font-size: 1.2rem;
+      border: 1px solid lighten($primary-color, 50%);
+      border-radius: $border-radius;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+      width: calc(33% - 2rem);
+      min-width: 250px;
+      background-color: #fff;
+      @include transition(border-color, background-color);
+
+      &:focus {
+        border-color: $primary-color;
+        background-color: lighten($primary-color, 75%);
+        outline: none;
+      }
+
+      &::placeholder {
+        color: darken($background-color, 20%);
+      }
+    }
+
+    .add-btn {
+      @include button-styles($primary-color, darken($primary-color, 10%));
+    }
+  }
+
+  // Table for managing elections
+  .election-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: $card-shadow;
+    border-radius: $border-radius;
+    overflow: hidden;
+    background-color: #fff;
+
+    th,
+    td {
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.2rem;
+      color: $secondary-color;
+    }
+
+    th {
+      background-color: $primary-color;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    td {
+      background-color: lighten($background-color, 10%);
+      border-bottom: 1px solid lighten($primary-color, 50%);
+    }
+
+    .status {
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+
+      &.ongoing {
+        background-color: #d0f9e6;
+        color: #28a745;
+      }
+
+      &.closed {
+        background-color: #ffd9d9;
+        color: #dc3545;
+      }
+    }
+
+    .action-btn {
+      @include button-styles(#f39c12, darken(#f39c12, 10%));
+
+      &.delete-btn {
+        @include button-styles(#c0392b, darken(#c0392b, 10%));
+      }
+    }
+  }
+
+  // Modal styling
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    .modal-content {
+      background-color: #fff;
+      padding: 3rem;
+      border-radius: $border-radius;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      text-align: center;
+
+      h3 {
+        font-size: 2.2rem;
+        color: $secondary-color;
+        margin-bottom: 2rem;
+        font-weight: 700;
+      }
+
+      .close-modal-btn {
+        @include button-styles($primary-color, darken($primary-color, 10%));
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    .new-election-form {
+      flex-direction: column;
+
+      input {
+        width: 100%;
+      }
+    }
+
+    .election-table {
+      font-size: 1rem;
+    }
+
+    .modal-content {
+      width: 95%;
+    }
+  }
+}

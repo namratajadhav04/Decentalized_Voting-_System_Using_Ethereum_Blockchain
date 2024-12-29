@@ -1,0 +1,138 @@
+.overview {
+  padding: 2rem;
+  background-color: #f7f8fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  color: #2a3a67;
+
+  .overview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1f2d53;
+    }
+
+    .settings-icon {
+      font-size: 1.6rem;
+      color: #1a73e8;
+      cursor: pointer;
+      transition: transform 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        color: #155db2;
+      }
+
+      &.active {
+        transform: rotate(45deg);
+      }
+    }
+
+    .settings-dropdown {
+      position: absolute;
+      top: 2.8rem;
+      right: 0;
+      background-color: #ffffff;
+      border: 1px solid #dce6f1;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      width: 200px;
+      color: #2a3a67;
+      font-size: 0.95rem;
+    }
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 0.8rem 1.2rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.8rem;
+
+    .date-range {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      label {
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      input[type="date"] {
+        padding: 0.5rem 0.6rem;
+        border: 1px solid #d1d9e0;
+        border-radius: 4px;
+        font-size: 0.95rem;
+        transition: border-color 0.2s ease;
+
+        &:hover,
+        &:focus {
+          border-color: #1a73e8;
+        }
+      }
+    }
+
+    .generate-report-btn {
+      background-color: #1a73e8;
+      color: #ffffff;
+      padding: 0.7rem 1.2rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        background-color: #155db2;
+        box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
+      }
+    }
+  }
+
+  .stats-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+
+    .card {
+      flex: 1 1 calc(25% - 1.2rem);  // Set each card to take 25% width minus the gap
+      background-color: #ffffff;
+      border: 1px solid #dce6f1;
+      border-radius: 8px;
+      padding: 1.6rem;
+      text-align: center;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      min-width: 200px;  // Minimum width to ensure good appearance on smaller screens
+
+      h3 {
+        font-size: 1.1rem;
+        color: #2a3a67;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a73e8;
+        margin: 0;
+      }
+
+      &:hover {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        transform: translateY(-4px);
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "fork-ts-checker-webpack-plugin": "^6.5.0"
+  }
+}

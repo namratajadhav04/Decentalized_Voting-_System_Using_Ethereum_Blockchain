@@ -1,0 +1,86 @@
+.sidebar {
+  width: 250px;
+  background-color: #007bff
+  ; // Base color for the sidebar
+  color: #ffffff; // Text color
+  padding: 20px;
+  border-radius: 8px; // Rounded corners for a softer look
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); // Deeper shadow for added depth
+  transition: background-color 0.3s ease; // Smooth transition for background color changes
+
+  h2 {
+    font-size: 1.5rem; // Adjusted heading size for visibility
+    margin-bottom: 1.5rem; // Space below the heading
+    color: #ffffff; // Ensure the heading color is visible
+    text-align: center; // Centering the sidebar title
+    font-weight: 600; // Slightly bolder font weight
+    text-transform: uppercase; // Uppercase text for a professional look
+    border-bottom: 2px solid #1a73e8; // Blue underline for the heading
+    padding-bottom: 10px; // Spacing below the heading
+  }
+
+  ul {
+    list-style: none; // Remove default list styling
+    padding: 0;
+
+    li {
+      padding: 12px 15px; // Adjusted padding for better spacing
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease; // Smooth transitions for hover effects
+      display: flex; // Using flexbox for item layout
+      align-items: center; // Center items vertically
+      border-radius: 4px; // Slight rounding for each item
+      position: relative; // Allow positioning of pseudo-elements
+      margin: 5px 0; // Vertical spacing between items
+      position: relative; // Positioning for pseudo-elements
+
+      &:hover {
+        background-color: #444d68; // Darker background on hover
+        transform: scale(1.03); // Slight scaling effect on hover
+      }
+
+      // Optional: Adding icons to the sidebar items
+      .icon {
+        margin-right: 10px; // Space between icon and text
+        font-size: 1.3rem; // Adjust icon size
+        transition: color 0.3s ease; // Smooth transition for icon color
+      }
+
+      // Adding a subtle shadow effect on hover
+      &:hover {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); // Shadow on hover
+      }
+
+      // Optional: Adding a subtle bottom border on hover
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 3px; // Height of the underline
+        background-color: #95b1e4; // Color of the underline
+        transition: width 0.3s ease; // Smooth transition for the underline
+      }
+
+      &:hover::after {
+        width: 100%; // Expand underline on hover
+      }
+    }
+  }
+
+  // Media query for responsiveness
+  @media (max-width: 768px) {
+    width: 100%; // Full width on smaller screens
+    padding: 15px; // Reduced padding for smaller screens
+
+    h2 {
+      font-size: 1.2rem; // Smaller heading size for mobile
+      border-bottom: 1px solid #1a73e8; // Thinner underline on mobile
+    }
+
+    li {
+      padding: 10px 12px; // Smaller padding for list items
+    }
+  }
+}

@@ -1,0 +1,160 @@
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: #f5f5f5;
+  min-height: 100vh; /* Updated for better layout on smaller screens */
+  font-family: 'Roboto', sans-serif;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;  /* Ensures that content wraps on smaller screens */
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 40px;  /* Adds some space between header and form */
+}
+
+.contact-form-container {
+  flex: 1 1 500px;  /* Flexbox for better flexibility */
+  padding: 40px;
+  background-color: #ffffff;
+  min-height: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  box-sizing: border-box;
+  padding-top: 40px;
+}
+
+.contact-form-container h1 {
+  color: #007bff;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 10px;  /* Adjusted for better spacing */
+  font-size: 16px;
+  color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;  /* Added bottom margin to space out form fields */
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #007bff;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-form .error {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
+.form-status {
+  color: #28a745;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.map-container {
+  flex: 1 1 500px;  /* Adjusts to same flex as form */
+  
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  margin-top: 20px;  /* Spacing for mobile responsiveness */
+}
+
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  width: 1rem;
+  height: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;  /* Stacks content on smaller screens */
+    align-items: center;
+  }
+
+  .contact-form-container,
+  .map-container {
+    flex: 1 1 100%;  /* Makes both sections take full width */
+    margin-right: 0;  /* Removes margin on smaller screens */
+    margin-bottom: 20px;  /* Adds spacing between form and map */
+  }
+
+  .contact-form button {
+    font-size: 14px;  /* Slightly smaller font size for mobile */
+    padding: 12px;  /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form-container h1 {
+    font-size: 28px;  /* Adjusts font size on very small screens */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 8px;  /* Reduced padding on small screens */
+    font-size: 14px;  /* Smaller font size for mobile */
+  }
+
+  .contact-form button {
+    padding: 10px;  /* Reduced padding */
+    font-size: 14px;  /* Smaller button text */
+  }
+
+  .map-container {
+    height: 300px;  /* Reduced height for mobile */
+  }
+}
