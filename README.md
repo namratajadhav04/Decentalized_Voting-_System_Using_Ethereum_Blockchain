@@ -1,4 +1,4 @@
-# Decentalized_Voting_System_Using_Ethereum_Blockchain
+# Decentalized Voting System Using Ethereum Blockchain
 
 # Introduction
 <p>A decentralized voting system built on the Ethereum blockchain has the potential to revolutionize the way we conduct elections. By leveraging the security, transparency, and immutability of blockchain technology, decentralized voting systems can eliminate many of the challenges and risks associated with traditional voting systems.</p> 
@@ -13,7 +13,7 @@ This project aims to develop a decentralized voting system using Ethereum blockc
 3. Install the dependencies. 
    
 
-# Screenshots of UI
+# User Interface
 ![image](https://github.com/user-attachments/assets/50835de0-a0b8-474b-b495-d898143876ed)
 
 ![image](https://github.com/user-attachments/assets/305f9eb9-529c-4bde-ad9b-0401beb511e9)
